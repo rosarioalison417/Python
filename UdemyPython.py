@@ -593,29 +593,161 @@
 
 import numpy as np
 
-a1 = np.array([2,1,3,4])                    # -----> 1D array
-a2 = np.array([[1,2,1],[2,1,2],[1,2,3]])    # -----> 2D array
-a3 = np.array([[[1,1,1],[2,2,2]], [[3,3,3],[4,4,4]], [[5,5,5],[6,6,6]]])    # ----> 3D array
-
-a4 = np.arange(10,50,10)        # -------> 1st par: start value; 2nd par: ending value; 3rd par: the jump in between values
-a5 = np.arange(15)
-a6 = np.arange(10,20)
-a7 = np.arange(0.3,2,0.2)
-
-a8 = np.linspace(3, 8, 9)       # -------> linspace() automatically displays nos. from 3 to 8 in 9 steps, though the actual int diff is 5, it calculates how to print it in 9 steps itself
-
-o1 = np.ones((2,2,2))           # -------> ones() creates n-dimensional array of 1s (A 3D array in this case)
-o2 = np.zeros((2,2))            # -------> zeros() creates n-dimensional array of 0s (A 2D array in this case)
-
-e1 = np.empty((3,4))            # -------> returns a 3x4 array with random elements
-e2 = np.eye(3)                  # -------> returns an array with 1s in its diagonals (3x3 in this case)
-
-r1 = np.random.random((5,5))    # -------> returns a 5x5 array with random nos
+# a1 = np.array([2,1,3,4])                    # -----> 1D array
+# a2 = np.array([[1,2,1],[2,1,2],[1,2,3]])    # -----> 2D array
+# a3 = np.array([[[1,1,1],[2,2,2]], [[3,3,3],[4,4,4]], [[5,5,5],[6,6,6]]])    # ----> 3D array
+#
+# a4 = np.arange(10,50,10)        # -------> 1st par: start value; 2nd par: ending value; 3rd par: the jump in between values
+# a5 = np.arange(15)
+# a6 = np.arange(10,20)
+# a7 = np.arange(0.3,2,0.2)
+#
+# a8 = np.linspace(3, 8, 9)       # -------> linspace() automatically displays nos. from 3 to 8 in 9 steps, though the actual int diff is 5, it calculates how to print it in 9 steps itself
+#
+# o1 = np.ones((2,2,2))           # -------> ones() creates n-dimensional array of 1s (A 3D array in this case)
+# o2 = np.zeros((2,2))            # -------> zeros() creates n-dimensional array of 0s (A 2D array in this case)
+#
+# e1 = np.empty((3,4))            # -------> returns a 3x4 array with random elements
+# e2 = np.eye(3)                  # -------> returns an array with 1s in its diagonals (3x3 in this case)
+#
+# r1 = np.random.random((5,5))    # -------> returns a 5x5 array with random nos
 # print(r1)
 
-print(a3.ndim)                  # --------> returns dimensions of a3
-print(a2.shape)
-print(a2.size)                  # -------> retruns
-print(e2.dtype)                 # -------> retruns data type (float)
-print(a3.itemsize)              # -------> returns itemsize (8 bytes)
-print(a1.reshape(2,-1))
+# print(a3.ndim)                  # --------> returns dimensions of a3
+# print(a2.shape)
+# print(a2.size)                  # -------> retruns
+# print(e2.dtype)                 # -------> retruns data type (float)
+# print(a3.itemsize)              # -------> returns itemsize (8 bytes)
+# try:
+#     print(a1.reshape(3,-1))     # -------> changes the shape of the array. This method returns an object that can be assigned to a method
+# except Exception as e:
+#     print(e)
+#
+# a3.resize(3,2,3)                # -------> resize() does the same thing as reshape(), but doesn't return anything. It is only used to display the changed shape
+# print(a3[0,:,:])
+# print(a3[0,...])
+# print(a3[0])
+# print(a3)
+# print("--------------")
+# print(a3[1:3])
+# print("-------------")
+# print(a3[1:3, 0 , 1:3])
+
+# c1 = np.arange(15)
+# b1 = c1 > 9
+# # print(c1)                       # -------> prints c1 with nos  ranging from 0 - 14
+# # print(b1)                       # -------> prints b1 with nos satisfying the condition
+#
+# c1[b1] = 1
+# print(c1)                        # --------> prints c1 after replacing all nos with 1 after satisfying b1 condition
+
+# c2 = np.arange(25).reshape(5,5)    # --------> makes a 5x5 array from 0-24 range
+# print(c2)
+# print(c2.max())
+# print(c2.min())
+# print(c2.sum())
+# print(c2.cumsum())               # ---------> returns cumulutive sum of c2
+# print(c2.max(axis = 0))          # ---------> returns max from columns of c2
+# print(c2.max(axis = 1))          # ---------> returns max from rows of c2
+# print(c2.cumsum(axis = 0))
+# print(c2.cumsum(axis = 1))
+
+######################### SHALLOW COPY PROBLEM ################################################
+
+# c3 = c2                            # --------> This creates a shallow copy of c2
+# c3[0,0] = 16                       # --------> changes are made in c3
+# print(c2)                          # --------> the changes are reflected in c2 as well
+# print(c3 is c2)                    # --------> True. Any changes in c3 are reflected in c2
+
+######################## RESOLUTION TO SHALLOW COPY PROBLEM ####################################
+
+# c3 = c2.copy()                     # -------> Copy of c2 is assigned to c3
+# c3[0,0] = 0                        # -------> changes made to c3 are not reflected in c2
+# print(c2)
+# print(c3)
+# print(c3 is c2)                    # -------> returns a false
+
+#################################################################################################
+
+# v1 = np.array([2,1,3,4])
+# v2 = np.array([5,1,7,6])
+# print(np.vstack((v1,v2)))           # --------> vertically stacks the arrays v1 and v2
+# print(np.hstack((v1,v2)))           # --------> horizontally stacks the arrays v1 and v2
+
+
+
+# x = np.linspace(0,6.28,20)
+# print(np.sin(x))
+# print(np.cosin(x))
+# print(np.tan(x))
+
+# x = np.arange(9).reshape(3,3)
+
+# print( x < 4)                     # ---------> any of the operations can be performed on array as we do on numbers
+# print( x **  2)
+# print(np.exp(x))
+# print(x * 4)
+# print(x - 4)
+
+# y = np.arange(10,19).reshape(3,3)
+# print(x*y)                         # --------> multiply array x with array y
+
+
+# a = np.array([[1,1],[2,2],[3,3]])
+# b = np.array([[1,2,3,4,5],[1,2,3,4,5]])
+# print(np.dot(a,b))                # ---------> multidimensional array multiplication is done using dot() function
+
+
+########################################## PDB MODULE FOR DEBUGGING ##########################################################
+
+################
+
+# COMMANDS FOR TERMINAL IN DEBUG MODE:
+# w - Where: lists where we are in debug
+# list - used to list the code
+# list m,n - used to list code from line m to n
+# list n,m - used to list lines from n and n+m lines after that
+# args - used to list out arguments passed in the code
+# p x - p is used to print x argument
+# pp x - pp is used to print more complex x Statement in a particular format
+# !x=4 - ! is used to assign argument x with a value for in debug mode
+# step - used for traversing program line by line
+# next - used to skip a function block and go to the next block
+# until - it is mostly used to skip loops in the program
+# return - runs the program until it encounters a return statement
+
+###############
+import pdb                           # --------> pdb module is used for debugging and tracing
+# for i in range(5):
+#     print("Statement: " + str(i+2))
+# pdb.set_trace()                     # --------> set_trace() starts the trace from the first line afer it. (Statement 7 in this case)
+# print("Statement: 7")
+# # pdb.pm()                            # --------> Postmortem method is used to debug a program after it ends..
+
+# def fun1(a):
+#     if a % 2:
+#         return true
+#     else:
+#         return false
+#
+# def fun2(x):
+#     if type(x) is int:
+#         pdb.set_trace()
+#         print(fun1(x))
+#     else:
+#         print('Not defined')
+#
+# fun2(3)
+
+
+def IsPrime(n):
+    for x in range(2, n // 2+1):
+        if not n % x:
+            return False
+    return True;
+
+def PrimesTo(n):
+    for x in range(2, n):
+        if IsPrime(x):
+            print(x)
+PrimesTo(50)
