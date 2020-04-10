@@ -1,15 +1,15 @@
-###################### IMPORTANT ######################
-#TO RUN A SCRIPT: Command+I
-#COMMAND PALETTE: CMD+SHIFT+P
-#To comment a line: Command+/
-
-####################### CONDITIONS ######################
-
+# ##################### IMPORTANT ######################
+# TO RUN A SCRIPT: Command+I
+# COMMAND PALETTE: CMD+SHIFT+P
+# To comment a line: Command+/
+#
+# ###################### CONDITIONS ######################
+#
 # if 5 < 7:
 #     if 6 > 5:
 #         print("6>5")
 # print("5<7")
-
+#
 # passerby_speech = "Hello"
 # if passerby_speech == "Hello":
 #     print("Hi")
@@ -17,14 +17,14 @@
 #     print("Hello")
 # else:
 #     print("Hey")
-
+#
 # a = 3 if 3**2 > 9 else 14   -----------> Ternary operations
 # print(a)
-
-####################### LOOPS ######################
-
-#range(start, stop, step)   --------------> used in loops
-#below code is equivalent to for(i=0, i<=10, i++)
+#
+# ###################### LOOPS ######################
+#
+# range(start, stop, step)   --------------> used in loops
+# below code is equivalent to for(i=0, i<=10, i++)
 # for i in range(2,10):
 #     print(i)
 #
@@ -33,45 +33,45 @@
 #     print(string[i])
 # for i in string:
 #     print(i)
-
+#
 # condition = 10
-
+#
 # while condition != 0:
 #     print(condition)
 #     condition = condition - 1
-
-####################### FUNCTIONS ######################
-
+#
+# ###################### FUNCTIONS ######################
+#
 # def function():
 #     return "This function returns"
 # result = function
-
+#
 # print(result)
 #
 # def multiVal():
 #     return "This is a result, ", 2
 # print(multiVal())
-
+#
 # def par(a, b):
 #     c = a+b
 #     return c
 # result = par(10, 2)
 # print(result)
-
+#
 # def default_param(a = 3, b = 4, c = 5):  -------> Parameters pass by value
 #     return a+b+c
 # result = default_param()
 # print(result)
-
-####################### SCOPE OF A PARAMTER ######################
-
+#
+# ###################### SCOPE OF A PARAMTER ######################
+#
 # def scope(a):
 #     a= a+1
 #     print(a)
 #     return a
 # scope(5)
 # print(a)     --------> a is outside its scope
-
+#
 # def outer(a):
 #     def inner(b):
 #         print("Inner done")
@@ -80,8 +80,8 @@
 #     print("Outer done")
 #     return(a)
 # print(outer(4))
-
-
+#
+#
 # def p(a):
 #     def q(b):
 #         def r(c):
@@ -92,22 +92,22 @@
 #     print("P done")
 #     return q
 # print(p(4)(5)(2))     ----------->p=4, q=5, r=2
-
-####################### RECURSIVE FUNCTIONS ######################
-
+#
+# ###################### RECURSIVE FUNCTIONS ######################
+#
 # def factorial(n):
 #     if n == 1:
 #         return 1;
 #     else:
 #         return n * factorial(n - 1)
 # print(factorial(5))
-
+#
 # def sum(n):   -------> Normal recursive funtion
 #     if n == 1:
 #         return 1
 #     else:
 #         return n + sum(n-1)
-
+#
 # def tail_sum(n, accumulator = 0):  ----> recursive tail function with repeating paramter "Accumulator"
 #     if n == 0:
 #         return accumulator
@@ -115,18 +115,18 @@
 #         return tail_sum(n-1, accumulator+n)
 # print(sum(10))
 # print(tail_sum(10))
-
-#Lambda function
+#
+# Lambda function
 # f = lambda c: lambda a, b: lambda d: (c * (a + b)) % d
 # print(f(5)(4,3)(2))
-
-####################### EXCEPTION HANDLING ######################
-
+#
+# ###################### EXCEPTION HANDLING ######################
+#
 # i = 5/0
 # print(i)
 # file = open("file","r")
-
-
+#
+#
 # try:
 #     a= 5/0
 # except Exception as e:
@@ -136,7 +136,7 @@
 #     n = int(input("Enter an Int: "))
 # except ValueError:
 #     print("This is not an integer")
-
+#
 # print("ENter your name: ")
 # x = input()
 # print('Hello')
@@ -148,7 +148,7 @@
 #         print(sum)
 # except FileNotFoundError:
 #     print("The file dne")
-
+#
 # a=1
 # def RaiseException(a):
 #     if type(a) != type('a'):
@@ -157,23 +157,23 @@
 #     RaiseException(a)
 # except ValueError as e:
 #     print(e)
-
+#
 # def TestCase(a, b):
 #     assert a < b, "a is greater than b"
 # try:
 #     TestCase(2, 1)
 # except AssertionError as e:
 #     print(e)
-
-####################### DATA I/O ##################################
-
+#
+# ###################### DATA I/O ##################################
+#
 # age = 1
 # age = input("How old are you: ")
 # print(age)
-
-#FILE MANAGEMENT
+#
+# FILE MANAGEMENT
 # open(filename, access, buffering)
-
+#
 # file = open("/Users/alisonrosario/Desktop/Python/File.txt", "r")
 # # print(file.read())
 # # file.seek(2)
@@ -183,7 +183,7 @@
 # print("File Name: " + file.name)
 # print("is closed: " + str(file.close))
 # file.close()
-
+#
 # # try:
 # file = open("/Users/alisonrosario/Desktop/Python/File.txt", "w+")
 # file.write("Hello File. I am string")
@@ -194,23 +194,23 @@
 # file.close()
 # except IOError:
 #     print("There is an IOError in the code")
-
-###################### DATA STRUCTURES #############################
-
-####################### TUPLE - sequence of immutable objects ######################
-
+#
+# ##################### DATA STRUCTURES #############################
+#
+# ###################### TUPLE - sequence of immutable objects ######################
+#
 # tup = (1, 'abc', 2, 'cde')
 # tup1 = 3, 'efg', True
 # tup2 = 'A'  # ----> This works too: tup = ('A', )
-
+#
 # print(tup[0])
 # print(tup[0:2])
-
+#
 # try:
 #     tup[3] = 5    # ------> Adding like this doesn't work, refer below block of code for valid code
 # except Exception as e:
 #     print(e)
-
+#
 # tup = tup[0:3] + (5, )  # ----------> Operations applicable on strings can be performed on tuples
 # print('A' in tup2)   # -------> Checks if A is in tup2
 # print(tup)
@@ -223,13 +223,13 @@
 # print(multipleResult())  # ------> Returns the tuple defined in the function
 #
 # print((1, 2, 3) == (1, 2))  # ----->Checks if tuples are equal
-
+#
 # print(len(tup))
 # print(max(tup1))  # ---> Returns the biggest element in the tuples
 # print(min(tup1))  # ---> Returns the smallest element in the tuples
-
-################### LISTS ##############################
-
+#
+# ################## LISTS ##############################
+#
 # list1 = [1, 'abc', (2,3)]
 # print(list1)
 #
@@ -240,33 +240,33 @@
 # print(2 in list1)           # -------> Checks if 2 is in the list
 # print(list1 == [1, 'abc'])   # -------> Checks if list1 is equal to the other list
 # print(list1[:2])             # ------> Returns 1st 2 elements in the list
-
+#
 # list1.append(6)             # --------> Can be used to append the element at the end of the list
 # list1[len(list1):] = [7]    # --------> Can be used to append the element at the end of the list (2nd way to add an element)
 # print(list1)
-
-
-######## map(funtion, iterables)  ----> function is applied on the iterables ############
+#
+#
+# ####### map(funtion, iterables)  ----> function is applied on the iterables ############
 # print(list(map(lambda x: x**2 + 3*x + 1, [1,2,3,4])))
-
+#
 # circle_areas = [3.56773, 5.57668, 4.00914, 56.24241, 9.01344, 32.00013]     # ------> ERROR IN THIS, PLS FIX!
-
+#
 # result = list(map(round, circle_areas, range(1,7))
 # print(round_circle)
-
-########filter(funtion, iterables) ----> filters the iterables that are true according to the function ############
+#
+# #######filter(funtion, iterables) ----> filters the iterables that are true according to the function ############
 # print(list(filter(lambda x: x < 4, [1,2,3,4,5,4,3,2,1])))
-
-################## reduce() - CHECK ON THIS #######################
+#
+# ################# reduce() - CHECK ON THIS #######################
 # from functools import reduce
 # print(functools.reduce(lambda x, y: x * y, [1,2,3,4]))
-
-
-############### DICTIONARY #######################################
-
+#
+#
+# ############## DICTIONARY #######################################
+#
 # my_dict = {'Key' : 'Value', ('K', 'E', 'Y') : 5}  # -----> Dictionaries use key : value pairs
 # my_dict1 = {x: x + 1 for x in range(10)}
-
+#
 # print(my_dict)
 # print(my_dict['Key'])   # -------> Prints the value for 'Key'
 # print(my_dict1[2])
@@ -276,19 +276,19 @@
 # del my_dict[1]      # ------> Deletes the Key = 1 and its corresponding value in the dictionary
 # my_dict.clear()     # ------> Clears entire dictionary
 # print(my_dict)
-
-########### SHALLOW COPIES : ####################################
-######Two copies of a data structure, share the same set of elements
-
+#
+# ########## SHALLOW COPIES : ####################################
+# #####Two copies of a data structure, share the same set of elements
+#
 # my_dictionary = {'Item' : 'Shirt', 'Size' : 'Medium', 'Price' : '$50'}
 # my_dictionary1 = my_dictionary  # -----------> copies my_dictionary content to my_dictionary1
 # print(my_dictionary)
 # my_dictionary1['Size'] = 'Small'
 # print(my_dictionary1)
-
-################### SETS ######################################
-######## Operations ----> | : Union ; ^ : Intersection ; - : Difference
-
+#
+# ################## SETS ######################################
+# ####### Operations ----> | : Union ; ^ : Intersection ; - : Difference
+#
 # my_set = set(['one', 'two', 'three', 'one'])
 # my_set1 = set(['two', 'three', 'four'])
 #
@@ -299,14 +299,14 @@
 # print(my_set | my_set1)
 # my_set.add('five')      # --------> Add an element in the set
 # print(my_set)
-
+#
 # print(set.union(my_set, my_set1))           # -------> These do the same thing as the symbols defined above
 # print(set.intersection(my_set, my_set1))
 # print(set.difference(my_set, my_set1))
-
-
-##################### MODULES AND PACKAGES ##################################
-
+#
+#
+# #################### MODULES AND PACKAGES ##################################
+#
 # import Package as Alias         # ---------> Import Package with an Alias name
 # Alias.AnyFuncInPackage()        # ---------> Alias = Package
 #
@@ -316,7 +316,7 @@
 # dir(Package)        # ---------> Returns all the functions in the Package
 #
 # ___init__       # ---------> ___init__ (3 _ in the beginning, 2 in the end) is used define a package; keep this file in each folder of the package
-
+#
 # import copy
 #
 # my_dictionary = {'Key' : 'Value', ('K','E', 'Y') : 5}     # ------> The deepcopy problem (refer Dictionaries above)
@@ -325,7 +325,7 @@
 #
 # print(my_dictionary)
 # print(my_dictionary1)
-
+#
 # import math as m   #------> math package
 # print(dir(m))
 #
@@ -337,7 +337,7 @@
 #
 # import sys as s     # -------> System package
 # print(dir(s))
-
+#
 # print(m.cos(m.pi))
 # print(m.exp(1))
 # print(m.ceil(1.6))
@@ -348,12 +348,12 @@
 #
 # print(s.version)
 # print(s.path)
-
-################################### OBJECT ORIENTED PROGRAMMING ######################################
-
-########### Class : A collection of attributes that are defined for any objects
-########### data members, methods
-
+#
+# ################################## OBJECT ORIENTED PROGRAMMING ######################################
+#
+# ########## Class : A collection of attributes that are defined for any objects
+# ########## data members, methods
+#
 # class Complex:                              # --------> Class defined
 #     'this class simulates complex numbers'  # --------> description of the class
 #     def __init__(self,real, imag):          # --------> constructor class/ Use the __init__() function to assign values to object properties, or other operations that are necessary to do when the object is being created
@@ -372,8 +372,8 @@
 #     print(c.real, c.imag)
 # except Exception as e:
 #     print(e)
-
-
+#
+#
 # class Emp:
 #     'This class defines Emp heirarchy'
 #     def __init__(self, name, designation):
@@ -389,8 +389,8 @@
 #
 # e1 = Emp("Alison", "Python Developer")
 # e1.EmpDetails('3', '$100,000')
-
-########################################## INHERITANCE ###############################################
+#
+# ######################################### INHERITANCE ###############################################
 # class Vehicle:                                      # ---------> This is the base class / Abstract class
 #     def __init__(self,VIN,weight,manufacturer):
 #         self.vin_number= VIN
@@ -448,13 +448,13 @@
 # for v in [a,b,c,d]:
 #     print(a.getWeight(), b.transportCapacity(), c.vehicleType(), d.vehicleType())
 # print(Vehicle.number_of_vehicles)
-
-
-############################ DATA VISUALIZATION #############################
-                        ### Check out PLOTLY library ###
-
+#
+#
+# ########################### DATA VISUALIZATION #############################
+#                         ## Check out PLOTLY library ###
+#
 # import matplotlib.pyplot as plt
-
+#
 # fig = plt.figure("Histogram")
 # ax = fig.add_subplot(1,1,1)
 # ax.hist([21,12,23,35,45,60,33,22,56,34,28,40,41], bins = 7, facecolor = 'g', normed = True)
@@ -468,17 +468,17 @@
 # plt.xlabel("Range")
 # plt.ylabel("Amount")
 # plt.show()
-
-
-
-
+#
+#
+#
+#
 # fig2 = plt.figure('Box-plot')
 # ax1 = fig2.add_subplot(1,1,1)
 # ax1.boxplot([21,12,23,35,45,60,33,22,56,34,28,40,41])
 # plt.show()
-
-
-
+#
+#
+#
 # fig3 = plt.figure('Bar')
 # ax2 = fig3.add_subplot(1,1,1)
 # ax2.set_xlabel('X')
@@ -491,9 +491,9 @@
 #         # 3rd param: values are the width of the bars in the graph
 #         # 4th param: used to set the color of the bar
 # plt.show()
-
-
-
+#
+#
+#
 # fig4 = plt.figure('Line')
 # ax3 = fig4.add_subplot(1,1,1)
 # ax3.set_xlim([-2,10])
@@ -503,9 +503,9 @@
 # ax3.set_title("Lines")
 # ax3.plot([-1,2,4,7,8],[5,2,3,4,3], 'r')
 # plt.show()
-
-
-
+#
+#
+#
 # data = {'Player' : ['Wade', 'James', 'Kobe', 'Curry'],   # --------> Create a dictionary to store values and ease of use
 #         'First' : [10, 10, 8, 12],
 #         'Second' : [12, 8, 13, 8],
@@ -550,9 +550,9 @@
 # plt.legend(loc = 'Upper right')
 # plt.xlim([min(ticks) - bar_width, max(ticks) + bar_width])
 # plt.show()
-
-
-
+#
+#
+#
 # fig6 = plt.figure('Scatter')
 # ax5 = fig6.add_subplot(1,1,1)
 # ax5.scatter([-1,0,2,3,5], [2,1,3,0.5,4],[120,200,300,150,30],['r','g','b','#BB5500'])
@@ -562,7 +562,7 @@
 #         #3rd parameter: width of the plots (optional)
 #         #4th parameter: color of the plots (optional)
 # plt.show()
-
+#
 # fig7 = plt.figure("Pie")
 # ax6 = fig7.add_subplot(1,1,1)
 # sizes = [50, 50, 44, 36]
@@ -572,11 +572,11 @@
 # plt.pie(sizes, explode, labels = labels, colors=colors,autopct='%1.1f%%', shadow = True, startangle = 140)
 # plt.axis('equal')
 # plt.show()
-
-
-
-############## PANDAS LIBRARY #############################
-
+#
+#
+#
+# ############# PANDAS LIBRARY #############################
+#
 # import pandas as pd
 # df = pd.read_csv('/Users/alisonrosario/Desktop/Python/AirPassengers.csv')
 # print(df['AirPassengers'])
@@ -587,35 +587,35 @@
 # data_set = list(zip(names,total))
 # data_frame = pd.DataFrame(data = data_set, columns = ['Names', "Total"])
 # data_frame.to_csv('points.csv', index = True, header = True)
-
-
-################### NUMPY LIBRARY ##########################
-
-import numpy as np
-
-a1 = np.array([2,1,3,4])                    # -----> 1D array
-a2 = np.array([[1,2,1],[2,1,2],[1,2,3]])    # -----> 2D array
-a3 = np.array([[[1,1,1],[2,2,2]], [[3,3,3],[4,4,4]], [[5,5,5],[6,6,6]]])    # ----> 3D array
-
-a4 = np.arange(10,50,10)        # -------> 1st par: start value; 2nd par: ending value; 3rd par: the jump in between values
-a5 = np.arange(15)
-a6 = np.arange(10,20)
-a7 = np.arange(0.3,2,0.2)
-
-a8 = np.linspace(3, 8, 9)       # -------> linspace() automatically displays nos. from 3 to 8 in 9 steps, though the actual int diff is 5, it calculates how to print it in 9 steps itself
-
-o1 = np.ones((2,2,2))           # -------> ones() creates n-dimensional array of 1s (A 3D array in this case)
-o2 = np.zeros((2,2))            # -------> zeros() creates n-dimensional array of 0s (A 2D array in this case)
-
-e1 = np.empty((3,4))            # -------> returns a 3x4 array with random elements
-e2 = np.eye(3)                  # -------> returns an array with 1s in its diagonals (3x3 in this case)
-
-r1 = np.random.random((5,5))    # -------> returns a 5x5 array with random nos
-# print(r1)
-
-print(a3.ndim)                  # --------> returns dimensions of a3
-print(a2.shape)
-print(a2.size)                  # -------> retruns
-print(e2.dtype)                 # -------> retruns data type (float)
-print(a3.itemsize)              # -------> returns itemsize (8 bytes)
-print(a1.reshape(2,-1))
+#
+#
+# ################## NUMPY LIBRARY ##########################
+#
+# import numpy as np
+#
+# a1 = np.array([2,1,3,4])                    # -----> 1D array
+# a2 = np.array([[1,2,1],[2,1,2],[1,2,3]])    # -----> 2D array
+# a3 = np.array([[[1,1,1],[2,2,2]], [[3,3,3],[4,4,4]], [[5,5,5],[6,6,6]]])    # ----> 3D array
+#
+# a4 = np.arange(10,50,10)        # -------> 1st par: start value; 2nd par: ending value; 3rd par: the jump in between values
+# a5 = np.arange(15)
+# a6 = np.arange(10,20)
+# a7 = np.arange(0.3,2,0.2)
+#
+# a8 = np.linspace(3, 8, 9)       # -------> linspace() automatically displays nos. from 3 to 8 in 9 steps, though the actual int diff is 5, it calculates how to print it in 9 steps itself
+#
+# o1 = np.ones((2,2,2))           # -------> ones() creates n-dimensional array of 1s (A 3D array in this case)
+# o2 = np.zeros((2,2))            # -------> zeros() creates n-dimensional array of 0s (A 2D array in this case)
+#
+# e1 = np.empty((3,4))            # -------> returns a 3x4 array with random elements
+# e2 = np.eye(3)                  # -------> returns an array with 1s in its diagonals (3x3 in this case)
+#
+# r1 = np.random.random((5,5))    # -------> returns a 5x5 array with random nos
+# # print(r1)
+#
+# print(a3.ndim)                  # --------> returns dimensions of a3
+# print(a2.shape)
+# print(a2.size)                  # -------> retruns
+# print(e2.dtype)                 # -------> retruns data type (float)
+# print(a3.itemsize)              # -------> returns itemsize (8 bytes)
+# print(a1.reshape(2,-1))
